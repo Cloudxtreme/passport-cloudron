@@ -3,6 +3,9 @@ var util = require('util'),
     OAuth2Strategy = require('passport-oauth').OAuth2Strategy,
     InternalOAuthError = require('passport-oauth').InternalOAuthError;
 
+// Allow self signed certs!
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 function Strategy(options, verify) {
     options = options || {};
     options.authorizationURL = options.authorizationURL || process.env.ADMIN_ORIGIN + '/api/v1/oauth/dialog/authorize';
