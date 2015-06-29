@@ -1,6 +1,6 @@
 {
   "name": "passport-cloudron",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Cloudron OAuth passport module",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@gitlab-yellowtent.cloudron.me:6000/yellowtent/passport-cloudron.git"
+    "url": "https://github.com/cloudron-io/passport-cloudron.git"
   },
   "author": "Cloudron Developers <support@cloudron.io>",
   "license": "ISC",
