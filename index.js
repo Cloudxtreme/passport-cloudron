@@ -8,10 +8,10 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 function Strategy(options, verify) {
     options = options || {};
-    options.adminOrigin = options.adminOrigin || process.env.ADMIN_ORIGIN;
+    options.apiOrigin = options.apiOrigin || process.env.API_ORIGIN;
 
-    options.authorizationURL = options.authorizationURL || options.adminOrigin + '/api/v1/oauth/dialog/authorize';
-    options.tokenURL = options.tokenURL || options.adminOrigin + '/api/v1/oauth/token';
+    options.authorizationURL = options.authorizationURL || options.apiOrigin + '/api/v1/oauth/dialog/authorize';
+    options.tokenURL = options.tokenURL || options.apiOrigin + '/api/v1/oauth/token';
     options.scopeSeparator = ',';
 
     options.clientID = options.clientID || process.env.OAUTH_CLIENT_ID;
@@ -19,7 +19,7 @@ function Strategy(options, verify) {
 
     OAuth2Strategy.call(this, options, verify);
     this.name = 'cloudron';
-    this._profileUrl = options.adminOrigin + '/api/v1/profile';
+    this._profileUrl = options.apiOrigin + '/api/v1/profile';
 }
 
 util.inherits(Strategy, OAuth2Strategy);
