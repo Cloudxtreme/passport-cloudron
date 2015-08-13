@@ -27,7 +27,7 @@ See more details on the [addon documentation page](https://cloudron.io/reference
 The consumer key and secret, are picked up automatically from the environment variables, so
 usually you don't have to provide them manually.
 
-```
+```javascript
 passport.use(new CloudronStrategy({},
   function(token, tokenSecret, profile, done) {
     User.findOrCreate({ id: profile.id }, function (err, user) {
@@ -45,7 +45,7 @@ authenticate requests.
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
-```
+```javascript
 app.get('/auth/cloudron',
     passport.authenticate('cloudron'));
 
