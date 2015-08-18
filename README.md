@@ -20,16 +20,15 @@ access token and corresponding secret as arguments, as well as `profile` which
 contains the authenticated user's Cloudron profile.   The `verify` callback must
 call `done` providing a user to complete authentication.
 
-In order to identify your application to the Cloudron your app is being installed,
-specify the clientID and clientSecret within `options`. Those exported via env
-variables, as soon as you specify the `oauth` addon in your CloudronManifest.json.
-See more details on the [addon documentation page](https://cloudron.io/references/addons.html#oauth).
-The consumer key and secret, are picked up automatically from the environment variables, so
-usually you don't have to provide them manually.
+In order to identify your application to the Cloudron, specify the clientID and 
+clientSecret within `options`. These values are picked up automatically from the
+environment variables when using the `oauth` addon, so usually you don't have to provide
+them explicitly. See the [addon documentation page](https://cloudron.io/references/addons.html#oauth)
+for more information.
 
 ```javascript
 passport.use(new CloudronStrategy({},
-  function(token, tokenSecret, profile, done) {
+  function verify(token, tokenSecret, profile, done) {
     User.findOrCreate({ id: profile.id }, function (err, user) {
       return done(err, user);
     });
