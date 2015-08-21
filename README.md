@@ -12,6 +12,10 @@ $ npm install passport-cloudron
 
 ## Usage
 
+```
+var CloudronStrategy = require('passport-cloudron');
+```
+
 #### Configure Strategy
 
 The Cloudron authentication strategy authenticates users using a Cloudron account
