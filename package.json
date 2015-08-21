@@ -1,6 +1,6 @@
 {
   "name": "passport-cloudron",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Cloudron OAuth passport module",
   "main": "index.js",
   "scripts": {
