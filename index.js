@@ -3,9 +3,6 @@ var util = require('util'),
     OAuth2Strategy = require('passport-oauth').OAuth2Strategy,
     InternalOAuthError = require('passport-oauth').InternalOAuthError;
 
-// Allow self signed certs!
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-
 function Strategy(options, verify) {
     options = options || {};
     options.apiOrigin = options.apiOrigin || process.env.API_ORIGIN;
