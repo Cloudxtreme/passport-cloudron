@@ -31,7 +31,9 @@ them explicitly. See the [addon documentation page](https://cloudron.io/referenc
 for more information.
 
 ```javascript
-passport.use(new CloudronStrategy({},
+passport.use(new CloudronStrategy({
+    callbackURL: process.env.APP_ORIGIN + '/auth/done'
+  },
   function verify(token, tokenSecret, profile, done) {
     User.findOrCreate({ id: profile.id }, function (err, user) {
       return done(err, user);
